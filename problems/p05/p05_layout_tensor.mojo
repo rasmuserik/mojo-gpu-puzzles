@@ -25,6 +25,12 @@ fn broadcast_add[
 ):
     row = thread_idx.y
     col = thread_idx.x
+    output = LayoutTensor[dtype, out_layout](output.unsafe_ptr())
+    a = LayoutTensor[dtype, a_layout](a.unsafe_ptr())
+    b = LayoutTensor[dtype, b_layout](b.unsafe_ptr())
+    output[row, col] = a[col] + b[row]
+
+
     # FILL ME IN (roughly 2 lines)
 
 

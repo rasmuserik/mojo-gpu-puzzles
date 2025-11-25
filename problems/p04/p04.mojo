@@ -17,7 +17,8 @@ fn add_10_2d(
 ):
     row = thread_idx.y
     col = thread_idx.x
-    # FILL ME IN (roughly 2 lines)
+    print("row:", row, "col:", col)
+    output[row * size + col] = a[row * size + col] + 10
 
 
 # ANCHOR_END: add_10_2d

@@ -18,7 +18,10 @@ fn add_10_2d(
 ):
     row = thread_idx.y
     col = thread_idx.x
-    # FILL ME IN (roughly 2 lines)
+    out = LayoutTensor[dtype, layout](output.unsafe_ptr())
+    in = LayoutTensor[dtype, layout](a.unsafe_ptr())
+    out[row, col] = in[row, col] + 10
+
 
 
 # ANCHOR_END: add_10_2d_layout_tensor
